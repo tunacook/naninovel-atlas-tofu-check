@@ -19,6 +19,9 @@ export function checkByLine(lines: string[], fileName: string, characterContent:
     if (isSkipNaninovelSyntax(line)) continue
 
     const trimLine = trimAuthor(line)
+
+    core.info(trimLine)
+
     for (const char of [...trimLine]) {
       if (missingChars.includes(char)) continue
       if (!characterContent.includes(char)) {
